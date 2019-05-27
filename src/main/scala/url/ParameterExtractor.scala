@@ -28,7 +28,7 @@ object ParameterExtractor {
         val start = index + urlObject.getHost.length
         queryString = url.substring(start)
       }
-
+      println(queryString.split("\\?")(0))
       val queryMatcher = Pattern.compile("\\b" + param + "=([^&]+)")
         .matcher(queryString)
 
@@ -56,9 +56,18 @@ object ParameterExtractor {
       * google.com / q
       */
 
-    val url = "http://search.zum.com/search.zum?method=uni&option=accu&qm=f_typing&rd=1&query=4%EC%9B%94+11%EC%9D%BC+%EC%9E%84%EC%8B%9C%EA%B3%B5%ED%9C%B4%EC%9D%BC"
-    val param = "query"
+      val i="1박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌31박 2일 시즌3"
+    println(i.getBytes().length)
+    /*    val url = "http://search.zum.com/search.zum?method=uni&option=accu&qm=f_typing&rd=1&query=4%EC%9B%94+11%EC%9D%BC+%EC%9E%84%EC%8B%9C%EA%B3%B5%ED%9C%B4%EC%9D%BC"
+        val param = "query"
 
+        getParameterValue(url, param) match {
+          case Some(query) => println(query)
+          case _ => println("error")
+        }*/
+
+    val url = "http://auto.zum.com/guide_model.jsp?id_carbrand=12"
+    val param = "id_carbrand"
     getParameterValue(url, param) match {
       case Some(query) => println(query)
       case _ => println("error")
